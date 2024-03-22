@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        .container{
+            background-color: black;
+            display: flex;
+        }
+        .left{
+            flex: 2;
+            min-height: 90vh;
+           
+        }
+        .left video{
+            width: 100%;
+            height: 60vh;
+           
+        }
+        .right{
+            flex: 1;
+            height: 90vh;
+            background-color: #0c0c0c;
+            color: aliceblue;
+            padding: 10px;
+            overflow: auto;
+        }
+        #result{
+            color: red;
+        }
+        .right-top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .right-top button{
+            border: none;
+            padding: 6px;
+            min-width: 60px;
+            font-size: 1.1rem;
+            color: aliceblue;
+            background-color: brown;
+            cursor: pointer;
+        }
+        button:active{
+       transform: scale(0.9);
+        }
+       
+    </style>
+    
+</head>
+<body>
+   <!-- <center>
+    <h1>Media Events</h1>
+   </center>  -->
+
+   <div class="container">
+    <div class="left">
+      <video src="https://videocdn.cdnpk.net/joy/content/video/free/video0457/large_preview/_import_60bb06130d40a0.76964065.mp4?filename=1104482_1080p_4k_2k_3840x2160.mp4" controls autoplay muted loop onplay="playvideoHandler()" onpause="pausevideoHandler()" onvolumechange="volumechangeHandler()" onseeking="seekHandler()"></video>
+    </div>
+    <div class="right">
+   
+        <div class="right-top">
+            <h4>Output</h4>
+            <button onclick="cleartextHandler()">clear</button>
+        </div>
+    <br>
+    <hr>
+    
+    <p id="result"></p>
+</div>
+   </div>
+
+   <script>
+    let result = document.getElementById('result')
+
+     function cleartextHandler(){
+        result.innerHTML = ''
+     }
+    function playvideoHandler(){
+     result.innerHTML += 'started playing video...<br>'
+    }
+   function pausevideoHandler(){
+    result.innerHTML += 'video is paused...<br>'
+   }
+   function volumechangeHandler(){
+    result.innerHTML += 'volume is changing....<br>'
+   }
+
+   function seekHandler(){
+    result.innerHTML += 'video time is changing...<br> '
+   }
+   </script>
+</body>
+</html>

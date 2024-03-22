@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .hide{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+   <ul id="chat">
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+    <li onclick="test(this)">
+        <input type="checkbox" name="" id="" class="i">
+        list item1
+    </li>
+   </ul>
+
+   <button onclick="deleter()">delete</button>
+
+
+    <script>
+        let checked = false;
+        function test(li){
+            //    li.classList.add('hide')
+            let i = li.querySelector('.i')
+          if(i.checked){
+            i.checked = false;
+          }
+          else{
+            i.checked = true
+          }
+        }
+
+
+        let chats = document.getElementById('chat');
+        let list = chats.querySelectorAll('li');
+        console.log(list);
+       function deleter(){
+        for (k in list){
+            // if(list[k].querySelector('.i') == checked){
+            //     list[k].classList.add('hide')
+            // }
+        console.log(list[k].querySelector('.i'));
+        if(list[k].querySelector('.i').checked == true){
+            // list[k].style.background= 'red'
+            list[k].classList.add('hide')
+        }
+       
+            
+        }
+       }
+    </script>
+</body>
+</html>

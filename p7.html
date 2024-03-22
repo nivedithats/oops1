@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: #0c0c0c;
+            display: flex;
+
+        }
+        .left{
+   min-height: 100vh;
+   
+   flex: 2;
+
+        }
+        .left textarea{
+            width: 100%;
+            height: 100%;
+            color: green;
+            background-color: transparent;
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .right{
+            flex: 1;
+            height: 100vh;
+            background-color: rgb(21, 21, 21);
+            padding: 10px;
+            color: #f61212;
+
+        }
+        .right-top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .right-top button{
+            border: none;
+            padding: 6px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: red;
+            min-width: 60px;
+            cursor: pointer;
+
+        }
+         button:active{
+          
+            transform: scale(0.9);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Write some content inside the input and then select ,copy,paste and cut it</h1>
+    </center>
+
+    <div class="container">
+        <div class="left">
+            <textarea name="" id="" cols="30" rows="10"  onselect="selectHandler()" onpaste="pasteHandler()"  oncut="cutHandler()" oncopy="copyHandler()"></textarea>
+        </div>
+        <div class="right">
+         <div class="right-top">
+            <h4>output</h4>
+       <button  onclick="cleartextHandler()">clear</button>
+         </div>
+            <br>
+             <hr>
+            <p id="result"></p>
+        </div>
+    </div>
+
+
+    <script>
+
+        let result = document.getElementById('result')
+        function selectHandler(){  
+            result.innerHTML += 'user is selected the content <br>'
+        }
+
+        function pasteHandler(){
+            result.innerHTML += 'user is pasting the content in textarea.<br>'
+
+        }
+
+
+        function cutHandler(){
+            result.innerHTML += 'user is cut the content in textarea. <br>'
+
+        }
+
+
+        function copyHandler(){
+            result.innerHTML += 'user is copied the content in textarea. <br>'
+
+        }
+
+
+        
+        function cleartextHandler(){
+            result.innerHTML = ''
+
+        }
+
+    
+
+    </script>
+</body>
+</html>

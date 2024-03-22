@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            background-color:black;
+            color: aliceblue;
+            padding: 20px;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>MOUSE HOVER</h1>
+    </center>
+
+
+    <h1 id="text" onmousemove="handler()" onmouseout="removeHandler()">Hover your mouse pointer on me</h1>
+
+    <script>
+        let text = document.getElementById('text')
+        function handler(){
+            // text.tyle.color = '#fff';
+            // text.styel.backgroundColor = '#000'
+            // text.style.padding = '30px'
+            text.classList.add('active')
+        }
+        function removeHandler(){
+            // text.tyle.color = '';
+            // text.styel.backgroundColor = ''
+            // text.style.padding = ''
+            text.classList.remove('active')
+            
+        }
+    </script>
+</body>
+</html>

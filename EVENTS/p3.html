@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+      background-color: rgb(29, 149, 185);
+      color: black;
+      padding: 30px;
+  border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>MOUSE EVENTS</h1>
+    </center>
+
+    <hr>
+    <div id="text" onmouseover="hoverhandler()" onmouseleave="removehandler()">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium atque eligendi dolorem unde, rem expedita quo, debitis veniam, consequatur dolor voluptatem impedit accusamus alias nam facilis voluptatibus provident autem repudiandae!</p>
+    </div>
+
+    <script>
+        let div = document.querySelector('#text');
+
+        function hoverhandler(){
+            div.classList.add('active')
+        }
+        function removehandler(){
+       div.classList.remove('active')
+        }
+       
+    </script>
+</body>
+</html>

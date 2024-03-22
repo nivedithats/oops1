@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: teal;
+            color: #fff;
+            width: 50%;
+            height: 500px;
+            overflow: auto;
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>OnMouseWheel() and onscoll</h1>
+    </center>
+
+    <p id="output"></p>
+    <button onclick="test()">scroll to top</button>
+
+    <div id="text" onscroll="wheelHandler()" onmousewheel="wheelHandler()">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p> dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed commodi quasi dolor exercitationem iure et eius quis. Dicta obcaecati veritatis dignissimos aperiam harum ut. Aspernatur accusamus non est illum facilis.</p>
+    </div>
+
+
+
+    <script>
+        let output = document.getElementById('output')
+        let element = document.getElementById('text')
+
+
+
+        function  wheelHandler(){
+            output.innerHTML = element.scrollTop + 'px' //here we are getting tha value
+        }
+        function test(){
+            element.scrollTop = '0'  //here we are setting the value
+        }
+
+    </script>
+</body>
+</html>
