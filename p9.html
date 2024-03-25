@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Focus and Blur</h1>
+    </center>
+    <hr>
+    <form action="">
+        <label for="">Name</label>
+        <input type="name" name="name" id="name" onfocus="focusHandler()" onblur="blurHandler()">
+    </form>
+
+
+
+    <script>
+        let element = document.getElementById('name');
+
+
+        function focusHandler(){
+           // alert('focus')
+           element.style.backgroundColor = 'red'
+
+        }
+        function blurHandler(){
+            //alert('blur')
+           element.style.backgroundColor = 'gray'
+
+
+        }
+    </script>
+</body>
+</html>

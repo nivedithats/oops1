@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center>
+    <h1>Onchange Event</h1>
+   </center> 
+     
+
+   <!-- onchange event calls the function after lost the focus from that element -->
+   <input type="text" id="name" onchange="inputHandler()">
+   <!-- oninput calls the function on text changing time -->
+   <input type="text" id="name" oninput="inputHandler()">
+
+   <p id="output"></p>
+
+
+   
+
+
+
+   <select name="" id="courses" onclick="courseHandler()">
+    <option value="">select course</option>
+    <option value="mern">mern</option>
+    <option value="mean">mean</option>
+    <option value="dot">dot</option>
+   </select>
+   <p id="output1"></p>
+
+   <button>send</button>
+
+   <script>
+    let name = document.getElementById('name');
+    let output = document.getElementById('output');
+    let output1 = document.getElementById('output1');
+
+
+
+    function inputHandler(){
+        if(name.value.length<6){
+            output.innerHTML = 'pleace enter above 6 letters'
+            output.style.color = 'red'
+        }
+        else{
+            output.innerHTML = 'entered input is correct'
+            output.style.color = 'green'
+        }
+
+    }
+
+
+
+    let courses = document.getElementById('courses')
+    function courseHandler(){
+        if(courses.value == ''){
+            output1.innerHTML = 'pleace select courses'
+            output1.style.color = 'red'
+            courses.style.border = '1px solid red'
+
+
+        }
+        else{
+            output1.innerHTML = ' course selected'
+            output1.style.color = 'green'
+            courses.style.border = '1px solid green'
+
+
+        }
+    }
+   </script>
+</body>
+</html>
