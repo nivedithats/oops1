@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video{
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Play(), pause() and fullscreen() </h1>
+    </center>
+
+
+    <video src="https://www.w3schools.com/tags/mov_bbb.mp4" id="video"></video>
+    <button onclick="backwordVideo()"><<</button>
+    <button onclick="forwordVideo()">>></button>
+    <button id="mutebtn" onclick="muteVideo()">Mute</button>
+    <span id="time"></span>
+    <input type="range" id="range" min="0">
+    <span id="d"></span>
+
+
+
+    <button id="playpause" onclick="playVideo()">Play</button>
+
+
+    <button onclick="fullscreenVideo()">fullscreen</button>
+
+
+    <script>
+        let video = document.getElementById('video')
+        let time = document.getElementById('time');
+        let du = document.getElementById('d');
+        let range =  document.getElementById('range');
+        let playpausebtn = document.getElementById('playpause');
+        let isPlaying = true;
+       
+        function setVideoTime(){
+            time.innerText = Math.round(video.currentTime);
+            du.innerText = Math.round(video.duration - video.currentTime) + ':00s'
+            range.setAttribute('max', Math.round(video.duration))
+            range.setAttribute('value', Math.round(video.currentTime) )
+            if(video.currentTime == video.duration){
+                playpausebtn.innerText = 'play'
+                isPlaying = true;
+            }
+        }
+        setInterval('setVideoTime()', 100)
+
+
+        range.addEventListener('input', function(){
+            video.currentTime = range.value;
+            range.value = video.currentTime
+        })
+
+        function forwordVideo(){
+            // video.currentTime = video.currentTime + 5
+            video.currentTime += 5;
+        }
+        function backwordVideo(){
+            video.currentTime -= 5;
+        }
+
+        document.addEventListener('keydown', function(event){
+            console.log(event.key);
+            event.preventDefault()
+            if(event.key === 32 || event.key === " "){
+               video.pause();
+            }
+
+            if(event.key === 'M' || event.key === 'm'){
+                video.muted = true;
+            }
+
+            if(event.key === 'U' || event.key === 'u'){
+                video.muted = false;
+            }
+
+            if(event.key === 'ArrowRight'){
+                video.currentTime +=2;
+            }
+            if(event.key === 'ArrowLeft'){
+                video.currentTime -= 2;
+            }
+            if(event.key === 'P' || event.key === 'p'){
+                video.play()
+            }
+            
+            if(event.key === 'F' || event.key === 'f'){
+                video.requestFullscreen()
+            }
+            console.log(event.key);
+        })
+
+
+        function fullscreenVideo(){
+            video.requestFullscreen();
+        }
+
+
+
+
+
+function playVideo(){
+    // if(isPlaying == true){
+    //     video.pause()
+    //     isPlaying = false;
+    // }
+    // else{
+    //     video.play();
+    //     isPlaying = true;
+    // }
+        isPlaying =!isPlaying;
+        if(isPlaying){
+            video.pause()
+            playpausebtn.innerText = 'play'
+        }
+        else{
+            video.play()
+            playpausebtn.innerText = 'pause'
+        }
+
+}
+
+
+let mutebtn = document.getElementById('mutebtn');
+let isMute = true;
+function muteVideo(){
+
+    isMute =!isMute;
+        if(isMute){
+            video.muted = false;
+            mutebtn.innerText = 'mute'
+        }
+        else{
+            video.muted = true;
+            mutebtn.innerText = 'unmute'
+        }
+
+}
+
+
+        
+        
+       
+    </script>
+
+</body>
+</html>
